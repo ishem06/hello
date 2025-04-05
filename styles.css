@@ -48,6 +48,9 @@ h2 {
   display: flex;
   justify-content: center;
   gap: 15px;
+  overflow-x: auto; /* Enables horizontal scrolling on small screens */
+  padding-bottom: 10px; /* Optional: Adds some padding below the container for better touch interaction on mobile */
+  scroll-snap-type: x mandatory; /* Makes images snap to place while scrolling */
 }
 
 .gallery-container img {
@@ -56,10 +59,24 @@ h2 {
   object-fit: cover;
   border-radius: 10px;
   transition: transform 0.3s ease;
+  scroll-snap-align: start; /* Ensures images snap at the start of the container */
 }
 
 .gallery-container img:hover {
   transform: scale(1.05);
+}
+
+/* Responsive styles for smaller screens (e.g., mobile) */
+@media (max-width: 600px) {
+  .gallery-container {
+    padding: 0 10px; /* Reduces padding on mobile */
+    gap: 10px; /* Reduces the gap between images on mobile */
+  }
+
+  .gallery-container img {
+    width: 150px; /* Reduces the size of images on mobile for better fit */
+    height: 150px;
+  }
 }
 
 #love-letter {
