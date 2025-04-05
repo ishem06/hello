@@ -38,35 +38,39 @@ h1 {
   padding: 20px;
 }
 
+#gallery {
+  background-color: #ffffff;
+  padding: 20px;
+}
+
 h2 {
   font-size: 2em;
   color: #c33c58;
   margin-bottom: 10px;
+  text-align: center;
 }
 
 .gallery-container {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  overflow-x: auto; /* Enables horizontal scrolling on small screens */
-  padding-bottom: 10px; /* Optional: Adds some padding below the container for better touch interaction on mobile */
-  scroll-snap-type: x mandatory; /* Makes images snap to place while scrolling */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  gap: 15px; /* Space between images */
+  justify-items: center; /* Centers the images inside each grid cell */
+  width: fit-content; /* Makes the container width fit the images */
+  margin: 0 auto; /* Centers the container horizontally */
 }
 
 .gallery-container img {
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
+  width: 200px; /* Image width */
+  height: 200px; /* Image height */
+  object-fit: cover; /* Ensures the images maintain aspect ratio */
   border-radius: 10px;
   transition: transform 0.3s ease;
-  scroll-snap-align: start; /* Ensures images snap at the start of the container */
 }
 
 .gallery-container img:hover {
-  transform: scale(1.05);
+  transform: scale(1.05); /* Hover effect */
 }
 
- 
 #love-letter {
   margin: 20px auto;
   width: 80%;
@@ -317,16 +321,14 @@ h2 {
 
 /* Media Query for Small Screens (Mobile) */
 @media (max-width: 600px) {
-   .gallery-container {
-    padding: 0 10px; /* Reduces padding on mobile */
-    gap: 10px; /* Reduces the gap between images on mobile */
+  .gallery-container {
+    grid-template-columns: repeat(2, 1fr); /* Keep 2 columns for mobile */
   }
 
   .gallery-container img {
-    width: 150px; /* Reduces the size of images on mobile for better fit */
+    width: 150px; /* Reduce image size for mobile */
     height: 150px;
   }
-
   #surprise-message {
     padding: 20px;
     width: 90%; /* Take up more space on small screens */
