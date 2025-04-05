@@ -66,19 +66,7 @@ h2 {
   transform: scale(1.05);
 }
 
-/* Responsive styles for smaller screens (e.g., mobile) */
-@media (max-width: 600px) {
-  .gallery-container {
-    padding: 0 10px; /* Reduces padding on mobile */
-    gap: 10px; /* Reduces the gap between images on mobile */
-  }
-
-  .gallery-container img {
-    width: 150px; /* Reduces the size of images on mobile for better fit */
-    height: 150px;
-  }
-}
-
+ 
 #love-letter {
   margin: 20px auto;
   width: 80%;
@@ -329,6 +317,16 @@ h2 {
 
 /* Media Query for Small Screens (Mobile) */
 @media (max-width: 600px) {
+   .gallery-container {
+    padding: 0 10px; /* Reduces padding on mobile */
+    gap: 10px; /* Reduces the gap between images on mobile */
+  }
+
+  .gallery-container img {
+    width: 150px; /* Reduces the size of images on mobile for better fit */
+    height: 150px;
+  }
+
   #surprise-message {
     padding: 20px;
     width: 90%; /* Take up more space on small screens */
